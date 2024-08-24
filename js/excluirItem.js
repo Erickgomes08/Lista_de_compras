@@ -1,10 +1,18 @@
-const containerListaComprados = document.getElementById("container-lista-comprados")
+import { verificarListaComprados } from "./verificarListaComprados.js"
+import { verificarListaVazia } from "./verificarListaVazia.js"
 
-export function verificarListaComprados(lista) {
+const listaDeCompras = document.getElementById("lista-de-compras");
+const ListaComprados = document.getElementById("lista-comprados");
 
-    if (lista.childElementCount === 0) {
-        containerListaComprados.style.display = "none";
-    } else {
-        containerListaComprados.style.display = "block";
+const excluirItem = (elemento) => {
+    let confirmacao = confirm("Excluir esse item?")
+
+    if(confirmacao) {
+        elemento.remove();
+
+        verificarListaVazia(listaDeCompras);
+        verificarListaComprados(ListaComprados);
     }
 }
+
+export { excluirItem };
