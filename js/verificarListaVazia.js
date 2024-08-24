@@ -1,9 +1,9 @@
 const mensagemListaVazia = document.getElementById("mensagem-lista-vazia");
 
 export function verificarListaVazia(lista) {
-    if(lista.childElementCount === 0) {
+    if (lista.childElementCount === 0) {
         mensagemListaVazia.style.display = "block";
-    }else{
+    } else {
         mensagemListaVazia.style.display = "none";
     }
 }
